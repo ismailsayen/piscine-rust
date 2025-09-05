@@ -1,3 +1,3 @@
-pub fn doubtful(s: &mut String) {
+pub fn doubtful(s:&mut String) {
     s.push('?')
 }
