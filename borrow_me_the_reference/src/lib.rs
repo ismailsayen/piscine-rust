@@ -2,32 +2,24 @@ pub fn delete_and_backspace(s: &mut String) {
     let  v: Vec<char> = s.chars().collect();
     let mut res: String = String::new();
     let mut f: usize = 0;
-    let mut i: usize = 0;
-
-    // let mut b: usize = 0;
-    while i < v.len() {
+    for  i in 0.. v.len() {
         
-        match v[i] {
-            '-' => {
+            if v[i]=='-'  {
                 if !res.is_empty() {
                     res.pop();
-                    i += 1;
+                   
                 }
             }
-            '+' => {
+            if v[i]=='+' {
                 f += 1;
-                i += 1;
+              
             }
-            _ => {
+            if v[i]!='-' && v[i]!='+'{
                 if f != 0 {
-                    i += f;
-                    f = 0;
+                    f-=1
                 } else {
                     res.push(v[i]);
-                    i += 1;
                 }
-            }
-        }
     }
     *s = res
 }
