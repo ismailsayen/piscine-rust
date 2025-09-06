@@ -1,5 +1,5 @@
 pub fn delete_and_backspace(s: &mut String) {
-    let mut v: Vec<char> = s.chars().collect();
+    let  v: Vec<char> = s.chars().collect();
     let mut res: String = String::new();
     let mut f: usize = 0;
     let mut i: usize = 0;
@@ -35,20 +35,21 @@ pub fn delete_and_backspace(s: &mut String) {
 
 pub fn do_operations(v: &mut [String]) {
     let mut sign: &str = "+";
-    for val in v {
-        let mut nums: Vec<&str> = vec![];
-        nums = val.split("+").collect();
+    for val in v.iter_mut() {
+        let mut nums: Vec<&str> = val.split("+").collect();
         if nums.len() != 2 {
             nums = val.split("-").collect();
             sign = "-";
         }
+        let n1: i64 = nums[0].parse().unwrap();
+        let n2: i64 = nums[1].parse().unwrap();
         if sign == "+" {
-            let n1:i64= nums[0].parse().unwrap();
-            let n2:i64= nums[1].parse().unwrap();
             let r = n1 + n2;
             *val = r.to_string();
+        }else{
+            let r = n1 - n2;
+            *val = r.to_string();
         }
-        println!("{:?} {sign}", nums);
-        
+        // println!("{:?} {:?}", &sign, &nums);
     }
 }
