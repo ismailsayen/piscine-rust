@@ -24,7 +24,7 @@ impl Circle {
         let d: f64 = self.center.distance(c2.center);
         let max = c2.radius + self.radius;
         if d <= max {
-            true;
+            return true
         }
         false
     }

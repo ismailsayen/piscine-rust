@@ -3,8 +3,8 @@ use circle::*;
 fn main() {
     let circle = Circle::new(500.0, 500.0, 150.0);
     let circle1 = Circle {
-        center: Point(80.0, 115.0),
-        radius: 30.0,
+        center: Point(450.0, 450.0),
+        radius: 1000.0,
     };
     let point_a = Point(1.0, 1.0);
     let point_b = Point(0.0, 0.0);
