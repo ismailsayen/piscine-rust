@@ -22,9 +22,8 @@ impl Circle {
     }
     pub fn intersect(&self, c2: Circle) -> bool {
         let d: f64 = self.center.distance(c2.center);
-        let min = c2.radius - self.radius;
         let max = c2.radius + self.radius;
-        if d == min || d == max {
+        if d <= max {
             true;
         }
         false
