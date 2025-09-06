@@ -22,11 +22,10 @@ pub fn delete_and_backspace(s: &mut String) {
                 if f != 0 {
                     i += f;
                     f = 0;
-                    continue;
                 } else {
+                    res.push(v[i]);
                     i += 1;
                 }
-                res.push(v[i]);
             }
         }
     }
