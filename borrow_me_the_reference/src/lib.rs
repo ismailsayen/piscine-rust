@@ -3,7 +3,6 @@ pub fn delete_and_backspace(s: &mut String) {
     let mut res: String = String::new();
     let mut f: usize = 0;
     for  i in 0.. v.len() {
-        
             if v[i]=='-'  {
                 if !res.is_empty() {
                     res.pop();
@@ -15,13 +14,14 @@ pub fn delete_and_backspace(s: &mut String) {
               
             }
             if v[i]!='-' && v[i]!='+'{
-                if f != 0 {
+                if f > 0 {
                     f-=1
                 } else {
                     res.push(v[i]);
                 }
     }
-    *s = res
+    *s = res.clone();
+}
 }
 
 pub fn do_operations(v: &mut [String]) {
