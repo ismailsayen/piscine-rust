@@ -6,7 +6,7 @@ pub fn delete_and_backspace(s: &mut String) {
 
     // let mut b: usize = 0;
     while i < v.len() {
-        let ch = v[i];
+        
         match v[i] {
             '-' => {
                 if !res.is_empty() {
@@ -26,7 +26,7 @@ pub fn delete_and_backspace(s: &mut String) {
                 } else {
                     i += 1;
                 }
-                res.push(ch);
+                res.push(v[i]);
             }
         }
     }
@@ -50,6 +50,5 @@ pub fn do_operations(v: &mut [String]) {
             let r = n1 - n2;
             *val = r.to_string();
         }
-        // println!("{:?} {:?}", &sign, &nums);
     }
 }
