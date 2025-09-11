@@ -15,7 +15,7 @@ pub fn fetch_data(server: Result<&str, &str>, security_level: Security) -> Strin
             s.to_string()
         })
             .unwrap_or_else(|error| {       
-                    format!("Not found: {:?}", error) 
+                    format!("Not found: \"{:?}\"", error) 
             })
             .to_string(),
         _ => server.unwrap_err().to_string(),
