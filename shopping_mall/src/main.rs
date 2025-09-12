@@ -157,13 +157,13 @@ fn main() {
     );
 
     // returns the biggest store
-    // println!("Biggest store: {:#?}", biggest_store(&mall));
+    println!("Biggest store: {:#?}", biggest_store(&mall));
 
     // returns the list with the highest paid employees
-    // println!("Highest paid employee: {:#?}", highest_paid_employee(&mall));
+    println!("Highest paid employee: {:#?}", highest_paid_employee(&mall));
 
     // returns the number of employees
-    //println!("Number of employees: {}", nbr_of_employees(&mall));
+    println!("Number of employees: {}", nbr_of_employees(&mall));
 
     // checks if it is needed to add securities
     check_for_securities(
