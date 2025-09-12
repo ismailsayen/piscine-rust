@@ -1,5 +1,6 @@
 use std::collections::HashMap;
-
+pub mod mall;
+pub use crate::mall::*;
 #[inline]
 fn coerce_map<V>(m: HashMap<impl Into<String>, V>) -> HashMap<String, V> {
     m.into_iter().map(|(k, v)| (k.into(), v)).collect()
