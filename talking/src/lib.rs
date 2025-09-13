@@ -3,6 +3,9 @@ pub fn talking(text: &str) -> &str {
     if text.trim().chars().count() == 0 {
         return "Just say something!";
     }
+    if is_yelling(text) {
+      return "There is no need to yell, calm down!";
+    }
     match text.trim().chars().last().unwrap() {
         '!' => {
             if is_yelling(text) {
