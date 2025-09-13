@@ -12,12 +12,11 @@ pub fn expected_variable(str1: &str, str2: &str) -> Option<String> {
         }
 
         let similarity = ((len as f64 - n_change as f64) / len as f64) * 100.0;
-        // println!("{similarity} {n_change} {len}");
         if similarity >= 50.0 {
             return Some(format!("{}%", similarity.floor()));
+        } else {
+            return None;
         }
-    } else {
-        return None;
     }
 
     None
