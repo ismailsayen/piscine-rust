@@ -1,12 +1,11 @@
 pub fn search(array: &[i32], key: i32) -> Option<usize> {
     println!("{:?} {}", array, key);
     let mut ind: Option<usize> = None;
-    for i in 0..array.len() {
-       let  a  = match array[i] {
-            key => i,
+    for i in (0..array.len()).rev(){
+        match array[i as usize] {
+            key => ind = Some(i as usize),
             _ => continue,
         };
-        ind=Some(a);
     }
     ind
 }
