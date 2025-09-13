@@ -1,8 +1,6 @@
 pub mod mall;
-pub use crate::mall::*;
 use std::collections::HashMap;
-
-
+use crate::mall::{Employee, Guard, Mall, Store};
 
 pub fn biggest_store(mall: &Mall) -> (String, Store) {
     let mut max_sq_meters: u64 = 0;
@@ -83,7 +81,7 @@ pub fn check_for_securities(mall: &mut Mall, guards: HashMap<String, Guard>) {
     let number_quards: u64 = total_area / 200;
 
     for (guard_name, info) in guards {
-        mall.guards.insert(guard_name.clone(), info);
+        mall.hire_guard(guard_name.clone(), info);
         n_guard += 1;
         if n_guard == number_quards.try_into().unwrap() {
             break;
