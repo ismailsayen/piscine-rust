@@ -5,4 +5,3 @@ edition = "2024"
 
 [dependencies]
 convert_case = "0.6.0"
-edit_distance={path= "../edit_distance"}
