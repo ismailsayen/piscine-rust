@@ -1,5 +1,4 @@
 pub fn talking(text: &str) -> &str {
-    println!("{:?}", text);
     if text.trim().chars().count() == 0 {
         return "Just say something!";
     }
