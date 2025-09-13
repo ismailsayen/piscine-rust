@@ -43,7 +43,7 @@ pub fn highest_paid_employee(mall: &Mall) -> Vec<(String, Employee)> {
             }
         }
     }
-    let emp = mall
+    let emp = &mall
         .floors
         .get(&name_floor)
         .unwrap()
@@ -53,7 +53,7 @@ pub fn highest_paid_employee(mall: &Mall) -> Vec<(String, Employee)> {
         .employees
         .get(&name_agent)
         .unwrap();
-    res.push((name_agent, *emp));
+    res.push((name_agent, **emp));
     res
 }
 
