@@ -1,21 +1,22 @@
 pub fn talking(text: &str) -> &str {
-   if text.trim().chars().count()==0{
-      return "Just say something!";
-   }
+    println!("{:?}", text);
+    if text.trim().chars().count() == 0 {
+        return "Just say something!";
+    }
     match text.trim().chars().last().unwrap() {
-        '!'=>{
-         if is_yelling(text){
-            return "There is no need to yell, calm down!";
-         }
-          return "Interesting";
-        },
-        '?'=>{
-         if is_yelling(text){
-            return "Quiet, I am thinking!";
-         }
-          return "Sure.";
-        },
-        _=> "Interesting",
+        '!' => {
+            if is_yelling(text) {
+                return "There is no need to yell, calm down!";
+            }
+            return "Interesting";
+        }
+        '?' => {
+            if is_yelling(text) {
+                return "Quiet, I am thinking!";
+            }
+            return "Sure.";
+        }
+        _ => "Interesting",
     }
 }
 
