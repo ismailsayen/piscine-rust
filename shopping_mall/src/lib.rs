@@ -79,13 +79,13 @@ pub fn check_for_securities(mall: &mut Mall, guards: HashMap<String, Guard>) {
 }
 
 pub fn cut_or_raise(mall: &mut Mall) {
-    for (_, store) in mall.floors.iter_mut() {
-        for (_, info) in store.stores.clone() {
-            for (_, mut emp) in info.employees {
+    for floor in mall.floors.values_mut() {
+        for info in floor.stores.values_mut() {
+            for emp in info.employees.values_mut() {
                 let working_hours = emp.working_hours.1 - emp.working_hours.0;
-                let ten_percente = (emp.salary * 10.0) / 100.0;
+                let ten_percente = emp.salary / 10.0;
 
-                if (working_hours) >= 10 {
+                if working_hours >= 10 {
                     emp.raise(ten_percente);
                 } else {
                     emp.cut(ten_percente);
