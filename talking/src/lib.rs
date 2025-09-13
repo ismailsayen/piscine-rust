@@ -11,7 +11,7 @@ pub fn talking(text: &str) -> &str {
             return "Interesting";
         }
         '?' => {
-            if is_yelling(text) {
+            if is_yelling2(text) {
                 return "Quiet, I am thinking!";
             }
             return "Sure.";
@@ -28,7 +28,20 @@ pub fn talking(text: &str) -> &str {
 pub fn is_yelling(text: &str) -> bool {
     for ch in text.chars() {
         if ch.is_numeric() {
-            continue;
+           continue;;
+        }
+        if ch != '?' && ch != '!' && ch.is_ascii_alphanumeric() && ch.is_ascii_lowercase() {
+            return false;
+        }
+    }
+
+    true
+}
+
+pub fn is_yelling2(text: &str) -> bool {
+    for ch in text.chars() {
+        if ch.is_numeric() {
+           return false;
         }
         if ch != '?' && ch != '!' && ch.is_ascii_alphanumeric() && ch.is_ascii_lowercase() {
             return false;
