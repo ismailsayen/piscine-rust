@@ -26,34 +26,21 @@ pub fn biggest_store(mall: &Mall) -> (String, Store) {
 }
 pub fn highest_paid_employee(mall: &Mall) -> Vec<(String, Employee)> {
     let mut sallry: f64 = 0.0;
-    let mut name_agent: String = String::new();
-    let mut name_store = String::new();
-    let mut name_floor = String::new();
+
     let mut res: Vec<(String, Employee)> = vec![];
 
-    for (name, store) in &mall.floors {
-        for (name_s, info) in store.stores.iter() {
+    for (_, store) in &mall.floors {
+        for (_, info) in store.stores.iter() {
             for (name_emp, emp) in info.employees.iter() {
-                if sallry < emp.salary {
-                    sallry = emp.salary;
-                    name_agent = name_emp.clone();
-                    name_store = name_s.clone();
-                    name_floor = name.clone();
+                if sallry <= emp.salary {
+                    sallry=emp.salary;
+                    res.push((name_emp.clone(),*emp));
                 }
             }
         }
     }
-    let emp = &mall
-        .floors
-        .get(&name_floor)
-        .unwrap()
-        .stores
-        .get(&name_store)
-        .unwrap()
-        .employees
-        .get(&name_agent)
-        .unwrap();
-    res.push((name_agent, **emp));
+    
+  
     res
 }
 
