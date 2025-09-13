@@ -1,6 +1,7 @@
 use std::collections::HashMap;
 
 pub fn is_pangram(s: &str) -> bool {
+    println!("{s}");
     let mut chars_in_s: HashMap<char, u32> = HashMap::new();
     for ch in s.chars(){
         if ch.is_ascii_alphabetic(){
