@@ -1,6 +1,6 @@
 pub mod mall;
 use std::collections::HashMap;
-use crate::mall::{Employee, Guard, Mall, Store};
+pub use mall::{Employee, Guard, Mall, Store,Floor};
 
 pub fn biggest_store(mall: &Mall) -> (String, Store) {
     let mut max_sq_meters: u64 = 0;

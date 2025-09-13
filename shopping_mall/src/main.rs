@@ -1,4 +1,4 @@
-use shopping_mall::{mall::{Employee, Floor, Guard, Mall, Store}, *};
+use shopping_mall::*;
 
 fn main() {
     let mut mall = Mall::new(
