@@ -4,7 +4,7 @@ pub fn talking(text: &str) -> &str {
         return "Just say something!";
     }
     if is_yelling(text) {
-      return "There is no need to yell, calm down!";
+      return "";
     }
     match text.trim().chars().last().unwrap() {
         '!' => {
@@ -25,7 +25,7 @@ pub fn talking(text: &str) -> &str {
 
 pub fn is_yelling(text: &str) -> bool {
     for ch in text.chars() {
-        if ch.is_ascii_alphabetic() && ch.is_ascii_lowercase() {
+        if (ch.is_ascii_alphabetic() && ch.is_ascii_lowercase()) || ch.is_ascii_alphanumeric()  {
             return false;
         }
     }
