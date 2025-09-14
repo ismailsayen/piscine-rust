@@ -30,6 +30,7 @@ impl Color {
             a if a == second => first,
             _ => self.a,
         };
+        
         self
     }
 }
