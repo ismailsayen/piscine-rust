@@ -1,4 +1,5 @@
 pub fn scytale_cipher(message: &str, i: usize) -> String {
+    println!("{:?}", message);
     let mut cipher: Vec<Vec<char>> = vec![];
     let mut word: Vec<char> = vec![];
     let mut res = String::new();
