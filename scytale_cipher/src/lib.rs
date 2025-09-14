@@ -17,9 +17,12 @@ pub fn scytale_cipher(message: &str, i: usize) -> String {
             word.clear();
         }
     }
+    println!("{:?}", cipher);
     for id in 0..i {
-        res.push(cipher[0][id]);
-        res.push(cipher[1][id]);
+        for sl in 0..cipher.len() {
+            res.push(cipher[sl][id]);
+           
+        }
     }
 
     (&res.trim()).to_string()
