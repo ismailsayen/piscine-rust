@@ -62,7 +62,7 @@ pub fn units(n: u64) -> String {
         6 => "sex".to_string(),
         7 => "seven".to_string(),
         8 => "eight".to_string(),
-        9 => "four".to_string(),
+        9 => "nine".to_string(),
         _ => "".to_string(),
     }
 }
