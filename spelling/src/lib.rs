@@ -1,4 +1,7 @@
 pub fn spell(n: u64) -> String {
+    if n == 0 {
+        return "zero".to_string();
+    }
     if n == 1_000_000 {
         return "one million".to_string();
     }
@@ -35,7 +38,7 @@ pub fn spell(n: u64) -> String {
         res.push(units(number));
     }
 
-    let  result: String = String::from(res.join(" "));
+    let result: String = String::from(res.join(" "));
     let mut final_res = "".to_string();
     for (i, ch) in result.chars().enumerate() {
         if (i > 0 && ch == ' ' && result.chars().nth(i - 1) == Some('-'))
