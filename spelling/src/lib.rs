@@ -1,5 +1,5 @@
 pub fn spell(n: u64) -> String {
-    println!("{n}")
+    println!("{n}");
     if n == 0 {
         return "zero".to_string();
     }
