@@ -17,11 +17,10 @@ impl GameSession {
     }
 
     pub fn read_winner(&self) -> Option<&(String, u32)> {
-        // println!("{:?}", self);
-        if self.p1.1 < self.p2.1 {
-            return Some(&self.p2);
-        } else if self.p1.1 > self.p2.1 {
+        if self.p1.1 >= self.nb_games / 2 + 1 {
             return Some(&self.p1);
+        } else if self.nb_games / 2 + 1 <= self.p2.1 {
+            return Some(&self.p2);
         }
         None
     }
@@ -39,6 +38,6 @@ impl GameSession {
         }
     }
     pub fn delete(self) -> String {
-        format!("game deleted: id -> {:?}",self.id)
+        format!("game deleted: id -> {:?}", self.id)
     }
 }
