@@ -5,7 +5,7 @@ fn main() {
     println!("{:?}", game.read_winner());
 
     game.update_score("player2");
-    game.update_score("player2");
+    // game.update_score("player2");
     // game.update_score("Susana");
     // game.update_score("Susana");
     println!("{:?}", game.read_winner());

@@ -17,7 +17,7 @@ impl GameSession {
     }
 
     pub fn read_winner(&self) -> Option<&(String, u32)> {
-        println!("{:?}", self);
+        // println!("{:?}", self);
         if self.p1.1 < self.p2.1 {
             return Some(&self.p2);
         } else if self.p1.1 > self.p2.1 {
@@ -27,14 +27,10 @@ impl GameSession {
     }
 
     pub fn update_score(&mut self, user_name: &str) {
-        if (self.nb_games == 5
-            && (self.p1.1 >= self.nb_games/2 + 1 || self.p2.1 >= self.nb_games/2 + 1))
-            || (self.nb_games== 11
-                && (self.p1.1 >= self.nb_games/2 + 1 || self.p2.1 >= self.nb_games/2 + 1))
-        {
-
+        if self.p1.1 == (self.nb_games / 2 ) + 1 || self.p2.1 == (self.nb_games / 2 ) + 1 {
             return;
         }
+
         if self.p1.0 == user_name {
             self.p1.1 += 1;
         } else if self.p2.0 == user_name {
