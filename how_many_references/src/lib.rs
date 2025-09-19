@@ -13,6 +13,7 @@ impl Node {
     }
 
     pub fn rm_all_ref(&mut self, element: Rc<String>) {
+        println!("{:?}",self.ref_list);
         self.ref_list = self
             .ref_list
             .iter()
