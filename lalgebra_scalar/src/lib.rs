@@ -1,4 +1,4 @@
-use std::ops::{Add, Div, Mul, Sub};
+use std::{i64, ops::{Add, Div, Mul, Sub}};
 
 pub trait Scalar: Add + Sub + Mul + Div + Sized {
     type Item;
