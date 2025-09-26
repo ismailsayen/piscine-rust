@@ -7,15 +7,8 @@ name = "lalgebra_scalar"
 version = "0.1.0"
 
 [[package]]
-name = "matrix"
-version = "0.1.0"
-dependencies = [
- "lalgebra_scalar",
-]
-
-[[package]]
 name = "matrix_mult"
 version = "0.1.0"
 dependencies = [
- "matrix",
+ "lalgebra_scalar",
 ]
