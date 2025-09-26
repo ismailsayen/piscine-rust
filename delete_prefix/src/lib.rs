@@ -1,11 +1,11 @@
 pub fn delete_prefix<'a>(prefix: &'a str, s: &'a str) -> Option<&'a str> {
     println!("{}=> {}",prefix,s);
-    if prefix.len() > s.len() {
+    if prefix.chars().count() > s.chars().count() {
         return None;
     }
     let mut pr = "".to_string();
     for (i, ch) in s.chars().enumerate() {
-        if i == prefix.len() {
+        if i ==  prefix.chars().count() {
             break;
         }
         pr.push(ch);
