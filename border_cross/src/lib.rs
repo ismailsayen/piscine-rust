@@ -14,31 +14,31 @@ pub struct Truck<'a> {
 	pub load_tons: u32,
 }
 
-pub trait Vehicle<'a> {
-	fn model(&'a self) -> &'a str;
+pub trait Vehicle {
+	fn model(&self) -> &str;
 	fn year(&self) -> u32;
 }
 
-impl <'a>Vehicle<'a> for Truck<'a> {
-	fn model(&'a self) -> &'a str {
-		 self.model
-	}
-	fn year(&self) -> u32 {
-		self.year
-	}
-}
-
-impl <'a>Vehicle <'a>for Car<'a> {
-	fn model(&'a self) -> &'a str {
+impl Vehicle for Truck<'_> {
+	fn model(&self) -> &str{
 		self.model
 	}
-	fn year(&self) -> u32 {
+	fn year(&self) -> u32{
 		self.year
 	}
 }
 
-pub fn all_models<'a> (list:Vec<&'a (dyn Vehicle<'a> + 'a)>) -> Vec<&'a str> {
-	let mut res:Vec<&'a str> =vec![];
+impl Vehicle for Car<'_> {
+	fn model(&self) -> &str{
+		self.model
+	}
+	fn year(&self) -> u32{
+		self.year
+	}
+}
+
+pub fn all_models(list: Vec<&dyn Vehicle>) -> Vec<&str> {
+let mut res:Vec<&str> =vec![];
 	for ele in list{
 		res.push(ele.model());
 		
