@@ -29,7 +29,7 @@ use std::fmt;
 
 impl fmt::Display for Notification {
     fn fmt(&self, f: &mut Formatter<'_>) -> Result<(), std::fmt::Error> { 
-		write!(f,"{:?}, {}, {}",self.position,self.size,self.content.truecolor(self.color.0, self.color.1, self.color.2));
+		write!(f,"({:?}, {}, {})",self.position,self.size,self.content.truecolor(self.color.0, self.color.1, self.color.2));
 		Ok(())
 	 }
 }
