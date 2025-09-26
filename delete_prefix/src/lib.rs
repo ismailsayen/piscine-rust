@@ -1,4 +1,5 @@
 pub fn delete_prefix<'a>(prefix: &'a str, s: &'a str) -> Option<&'a str> {
+    println!("{}=> {}",prefix,s);
     if prefix.len() > s.len() {
         return None;
     }
